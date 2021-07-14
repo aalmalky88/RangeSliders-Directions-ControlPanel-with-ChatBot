@@ -1,0 +1,344 @@
+{
+  "intents": [
+    {
+      "intent": "age",
+      "examples": [
+        {
+          "text": "age"
+        },
+        {
+          "text": "how old are you ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "howareyou",
+      "examples": [
+        {
+          "text": "how are you ?"
+        },
+        {
+          "text": "how r u ?"
+        },
+        {
+          "text": "how you feel ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "major",
+      "examples": [
+        {
+          "text": "expertise"
+        },
+        {
+          "text": "specialization"
+        },
+        {
+          "text": "specialty"
+        },
+        {
+          "text": "your major ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "nationality",
+      "examples": [
+        {
+          "text": "what's your nationality ?"
+        },
+        {
+          "text": "where are you from ?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "tall",
+      "examples": [
+        {
+          "text": "height"
+        },
+        {
+          "text": "how tall are you ?"
+        },
+        {
+          "text": "length"
+        },
+        {
+          "text": "tall"
+        },
+        {
+          "text": "tallness"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Welcome",
+      "examples": [
+        {
+          "text": "."
+        },
+        {
+          "text": "bro"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "sir"
+        },
+        {
+          "text": "Wassup"
+        },
+        {
+          "text": "you"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_8_1626226763720",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "how",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "felling good"
+              },
+              {
+                "text": "I'm good"
+              },
+              {
+                "text": "I'm ok"
+              },
+              {
+                "text": "i feel fantastic"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#howareyou",
+      "dialog_node": "node_1_1626226614258",
+      "previous_sibling": "node_8_1626225514540"
+    },
+    {
+      "type": "standard",
+      "title": "welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              },
+              {
+                "text": "hi. How can I help you?"
+              },
+              {
+                "text": "yes . How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Welcome",
+      "dialog_node": "node_4_1626108905648",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "nat",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ksa"
+              },
+              {
+                "text": "Saudi"
+              },
+              {
+                "text": "Saudi Arabia"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#nationality",
+      "dialog_node": "node_4_1626226712516",
+      "previous_sibling": "node_9_1626226675714"
+    },
+    {
+      "type": "standard",
+      "title": "tall",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "185"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#tall",
+      "dialog_node": "node_7_1626226742557",
+      "previous_sibling": "node_4_1626226712516"
+    },
+    {
+      "type": "standard",
+      "title": "age",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "22"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#age",
+      "dialog_node": "node_8_1626225514540",
+      "previous_sibling": "node_4_1626108905648"
+    },
+    {
+      "type": "standard",
+      "conditions": "",
+      "dialog_node": "node_8_1626226763720",
+      "previous_sibling": "node_7_1626226742557"
+    },
+    {
+      "type": "standard",
+      "title": "major",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "information system"
+              },
+              {
+                "text": "is"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#major",
+      "dialog_node": "node_9_1626226675714",
+      "previous_sibling": "node_1_1626226614258"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "intent_classification": {
+      "training_backend_version": "v2"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Speak",
+  "language": "en",
+  "description": ""
+}

@@ -1,2 +1,2 @@
-# RangeSliders-Directions-ControlPanel-with-ChatBot
-Task 3 - merging My HTML Page with Chatbot Assistant 
+# RangeSliders-Directions-ControlPanel
+Directions ControlPanel merge with the rangeSliders ControlPanel with Database interaction for both 
